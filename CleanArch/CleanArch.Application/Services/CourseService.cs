@@ -18,5 +18,12 @@ namespace CleanArch.Application.Services
         {
             return new CourseViewModel { Courses = courseRepository.GetCourses() };
         }
+
+        //خالی بودن اینجا هم چک نمیشود
+        public Course GetCourseById(int courseId)
+        {
+            Course course = courseRepository.GetCourse(courseId);
+            return course;
+        }
     }
 }
