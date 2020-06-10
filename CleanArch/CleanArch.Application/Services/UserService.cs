@@ -1,4 +1,5 @@
 ﻿using CleanArch.Application.Interfaces;
+using CleanArch.Application.Security;
 using CleanArch.Application.ViewModels;
 using CleanArch.Domain.Interfaces;
 using CleanArch.Domain.Models;
@@ -35,6 +36,11 @@ namespace CleanArch.Application.Services
 
             return ViewModels.CheckUser.Ok;
 
+        }
+
+        public bool IsExistUser(string email, string password)
+        {
+            return userRepository.IsExistUser(email.Trim(), PasswordHelper.EncodePasswordMd5(password.Trim()));
         }
 
         public int RegisterUser(User user)
