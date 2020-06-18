@@ -9,6 +9,6 @@ namespace CleanArch.Application.Services
     public interface ICourseService
     {
         CourseViewModel GetCourse();
-        Course GetCourseById(int courseId);
+        Course GetCourseById(int courseId); 
     }
 }
